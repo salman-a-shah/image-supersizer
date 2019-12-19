@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Image Supersizer</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+	<h1>
+		Upload an Image to Supersize
+	</h1>
+
+	<p>
+		Permissible formats are .jpg and .png
+	</p>
+    <form method=post enctype=multipart/form-data>
+		<input type=file name=file>
+		<input type=submit value=Upload>
+    </form>
+    {% if imagefilename|length %}
+    <div>
+    	<img src="{{ imagefilename }}">
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
