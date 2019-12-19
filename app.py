@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import core_functions
 
 UPLOAD_FOLDER = './uploads/'
+PREDICITON_FOLDER = './predictions/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 def allowed_file(filename):
@@ -49,7 +50,7 @@ def uploaded_file(filename):
 @app.route('/prediction/<filename>')
 def prediction(filename):
 	model.predict(filename)
-	return send_from_directory('./static/', filename)
+	return send_from_directory(PREDICITON_FOLDER, filename)
 
 if __name__ == "__main__":
 	app.run(debug=True)

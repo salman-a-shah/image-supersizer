@@ -129,3 +129,9 @@ reportdetails/
 
 # swp files
 *.swp
+
+# test uploads and predictions
+uploads/*
+!uploads/Readme.txt
+predictions/*
+!predictions/Readme.txt

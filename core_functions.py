@@ -13,7 +13,7 @@ class Predictor():
 		image[image > 255] = 255
 		image[image < 0] = 0
 		image = Image.fromarray(image.astype(np.uint8))
-		image.save('./static/' + filename)
+		image.save('./predictions/' + filename)
 
 	def get_prediction(self, filename):
 		image = self.fetch_image(filename)
