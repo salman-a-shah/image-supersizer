@@ -1,16 +1,24 @@
 
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <title>Image Supersizer</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  </head>
-  <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-      {% block footer %}
-      {% endblock %}
-    </div>
-  </body>
+<head>
+  <title>Image Supersizer</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+    <nav>
+      <ul>
+        <li style="float:left">
+          <a href="{{ url_for('index') }}">
+            <img src="./static/images/logo.png" width="12px">
+            ImageSupersizer
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  {% block content %}{% endblock %}
+  {% block footer %}{% endblock %}
+</body>
 </html>

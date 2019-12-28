@@ -1,22 +1,58 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<header>
-	<h1>Image Supersizer</h1>
-</header>
-<main>
-	<section>
+<section>
+	<div class="mainsection">
+<!-- 		<a href="/test">
+			<div class="uploadbtn" >
+				Select Image
+			</div>
+		</a> -->
+	    <form method=post enctype=multipart/form-data name="uploadform">
+			<div>
+				<input type=file name=file class="choosefilebtn">
+			</div>
+			<input class="uploadbtn" type=submit value="Upload">
+	    </form>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<footer>
+	<div class="content-small-about">
+		<h3>
+			About
+		</h3>
 		<p>
-			Welcome to Image Supersizer. This is an free single image super-resolution app that doubles the dimensions of an image while attempting to minimize pixelation. This project is currently in alpha stage.
-		</p>
-	</section>
-	<section>
-		<p>
-			Click the link below to get started.
+			ImageSupersizer is a free super-resolution service that doubles the resolution of an image while attempting to preserve image quality. This app achieves this through the use of a convolutional residual neural network. This project is currently in alpha stage. Overtime, the supersizing model will be improved and additional models may be added for image enhancement.
 		</p>
 		<p>
-			<a href="{{ url_for('upload_file') }}">Start</a>
+			This project is created and maintained by Salman Shah. If you'd like to get in touch, feel free to send an email through the contact form.
 		</p>
-	</section>
-</main>
+	</div>
+	<div class="content-small-contact">
+		<h3>Contact the Creator</h3>
+		  <form action="mailto:salmanashah92@gmail.com">
+			  <div class="row">
+			    <div class="contact-input">
+			      <input type="text" id="name" name="name" placeholder="Your full name">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="contact-input">
+			      <input type="text" id="email" name="email" placeholder="Your email">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="contact-input">
+			      <textarea id="message" name="message" placeholder="Message"></textarea>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <input type="submit" value="Submit">
+			  </div>
+		  </form>
+	</div>
+</footer>
 {% endblock %}
