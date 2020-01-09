@@ -22,10 +22,8 @@ Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 Markdown==3.1.1
 MarkupSafe==1.1.1
-matplotlib==3.1.2
 numpy==1.17.4
 oauthlib==3.1.0
-opencv-python==4.1.2.30
 opt-einsum==3.1.0
 Pillow==6.2.1
 protobuf==3.11.1
