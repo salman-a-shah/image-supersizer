@@ -6,14 +6,14 @@ from PIL import Image
 class Predictor():
 
 	def __init__(self):
-		self.model = keras.models.load_model("./models/model.h5")
+		self.model = keras.models.load_model("/home/ThePhilosopher/image-supersizer/models/model.h5")
 
 	def predict(self, filename):
 		image = self.get_prediction(filename)
 		image[image > 255] = 255
 		image[image < 0] = 0
 		image = Image.fromarray(image.astype(np.uint8))
-		image.save('./predictions/' + filename)
+		image.save('/home/ThePhilosopher/image-supersizer/predictions/' + filename)
 		del image 	# delete image to save memory
 
 	def get_prediction(self, filename):
@@ -24,7 +24,7 @@ class Predictor():
 		return prediction
 
 	def fetch_image(self, filename):
-		image = Image.open('./uploads/' + filename)
+		image = Image.open('/home/ThePhilosopher/image-supersizer/uploads/' + filename)
 
 		# if there are 4 channels, convert to 3 channels
 		# image = image[:, :, :3]
