@@ -2,6 +2,7 @@ import os
 import time
 from flask import Flask, render_template, flash, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
+import load_environment_variables
 
 # Using custom built working directory
 # because pythonanywhere recommends using absolute paths

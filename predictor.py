@@ -13,6 +13,7 @@ import keras
 import keras.backend as K
 import numpy as np
 from PIL import Image
+import load_environment_variables
 
 WORKING_DIRECTORY = os.environ.get("WORKING_DIRECTORY")
 
