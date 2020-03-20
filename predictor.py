@@ -12,14 +12,16 @@ import os
 import keras
 import keras.backend as K
 import numpy as np
-from PIL import Image
 import load_environment_variables
+import utils
+
+from PIL import Image
 
 WORKING_DIRECTORY = os.environ.get("WORKING_DIRECTORY")
 
 def predict():
     #load model
-    model = keras.models.load_model(WORKING_DIRECTORY + "models/model.h5")
+    model = keras.models.load_model(WORKING_DIRECTORY + "models/model.h5", custom_objects={'PSNR': utils.PSNR})
 
     # get filename from the bash command
     filename = sys.argv[1]
